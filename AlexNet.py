@@ -73,7 +73,7 @@ def model(x):
 def load_and_preprocess_from_path_label(path, label):
     image = tf.io.read_file(path)  # 读取图片
     image = tf.image.decode_jpeg(image, channels=3)
-    image = tf.image.resize(image, [224, 224])  # 原始图片大小为(266, 320, 3)，重设为(192, 192)
+    image = tf.image.resize(image, [224, 224])  # 原始图片大小重设为(224, 224,3)
     image /= 255.0  # 归一化到[0,1]范围
     return image, label
 
